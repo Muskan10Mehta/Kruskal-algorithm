@@ -9,8 +9,11 @@ public class EdgeWeightedGraph {
 
     public EdgeWeightedGraph(int V) {
 
-    	if(V < 0) 
-	    throw new IllegalArugmentException("Number of vertices should be non-negative integer.");
+    	if(V < 0) {
+	    System.out.println("Number of Vertex should be a non-negative integer");
+	    System.exit(1);
+	}
+
 	this.V = V;
 	this.E = 0;
 	adj = (Bag<Edge>[]) new Bag[V];
@@ -21,7 +24,12 @@ public class EdgeWeightedGraph {
 
     public EdgeWeightedGraph(int V, int E) {
     	this(V);
-	if(E < 0) throw new IllegalArgumentException("Number of edges should be non-negative integer.");
+	if(E < 0) {
+	    System.out.println("Number of Edges should be non-negative integer");
+	    System.exit(1);
+	
+	}
+
 	for(int i = 0; i < E;i++){
 	    int v = V;
 	    int w = V;
